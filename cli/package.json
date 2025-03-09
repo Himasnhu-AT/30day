@@ -1,0 +1,32 @@
+{
+  "name": "30day-cli",
+  "version": "0.0.1",
+  "description": "TechOS 30day series cli tool",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc && node dist/index.js",
+    "build": "tsc",
+    "test": "jest",
+    "start": "node dist/index.js",
+    "postinstall": "npm run build"
+  },
+  "bin": {
+    "30days": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himasnhu-AT/30day.git"
+  },
+  "author": "Himanshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himasnhu-AT/30day/issues"
+  },
+  "homepage": "https://github.com/Himasnhu-AT/30day#readme",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^22.13.10"
+  }
+}
