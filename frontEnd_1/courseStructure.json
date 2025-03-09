@@ -1,0 +1,792 @@
+{
+  "courseName": "30 Days Frontend Challenge",
+  "description": "A comprehensive path to learn frontend development from basics to advanced concepts in 30 days.",
+  "prerequisites": [
+    "Basic computer skills",
+    "A code editor (like VS Code)",
+    "Git and GitHub understanding",
+    "Browser developer tools familiarity"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "HTML Basics - Document Structure",
+      "topics": [
+        "What is HTML",
+        "Basic document structure",
+        "Essential HTML elements",
+        "Creating HTML files"
+      ],
+      "learningObjectives": [
+        "Understand what HTML is and its purpose",
+        "Create a basic HTML document structure",
+        "Use essential HTML elements",
+        "Create and view HTML files"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: HTML Basics",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
+        },
+        {
+          "name": "W3Schools HTML Tutorial",
+          "url": "https://www.w3schools.com/html/"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "HTML Elements & Semantic HTML",
+      "topics": [
+        "Semantic HTML elements",
+        "Accessibility basics",
+        "Document structuring",
+        "HTML5 features"
+      ],
+      "learningObjectives": [
+        "Understand the importance of semantic HTML",
+        "Use appropriate semantic elements for content",
+        "Make content more accessible",
+        "Structure a document using semantic elements"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: HTML elements reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+        },
+        {
+          "name": "W3Schools Semantic Elements",
+          "url": "https://www.w3schools.com/html/html5_semantic_elements.asp"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "CSS Basics - Selectors & Properties",
+      "topics": [
+        "What is CSS",
+        "CSS selectors",
+        "Basic CSS properties",
+        "Including CSS in HTML"
+      ],
+      "learningObjectives": [
+        "Understand what CSS is and its purpose",
+        "Apply styling to HTML elements using various selectors",
+        "Use common CSS properties",
+        "Link CSS to HTML documents"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: CSS basics",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics"
+        },
+        {
+          "name": "CSS-Tricks: Getting Started with CSS",
+          "url": "https://css-tricks.com/guides/beginner/"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "CSS Box Model & Layout",
+      "topics": [
+        "CSS Box Model",
+        "Width and Height",
+        "Margin, Padding, Border",
+        "Display properties"
+      ],
+      "learningObjectives": [
+        "Understand the CSS box model",
+        "Control element dimensions and spacing",
+        "Work with margins, padding, and borders",
+        "Change how elements display on the page"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: The box model",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
+        },
+        {
+          "name": "CSS-Tricks: The CSS Box Model",
+          "url": "https://css-tricks.com/the-css-box-model/"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Responsive Design & Media Queries",
+      "topics": [
+        "Responsive web design principles",
+        "Media queries",
+        "Viewport meta tag",
+        "Fluid layouts"
+      ],
+      "learningObjectives": [
+        "Understand responsive design principles",
+        "Create websites that work on different screen sizes",
+        "Write and use media queries",
+        "Build fluid layouts"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Responsive design",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design"
+        },
+        {
+          "name": "W3Schools Responsive Web Design",
+          "url": "https://www.w3schools.com/css/css_rwd_intro.asp"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Flexbox Layout",
+      "topics": [
+        "Flexbox basics",
+        "Flex containers and items",
+        "Alignment and ordering",
+        "Building a flex-based layout"
+      ],
+      "learningObjectives": [
+        "Understand flexbox and its purpose",
+        "Create flexible layouts using flexbox",
+        "Control alignment, spacing, and sizing of elements",
+        "Build a complete page layout using flexbox"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Flexbox",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox"
+        },
+        {
+          "name": "CSS-Tricks: A Complete Guide to Flexbox",
+          "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "CSS Grid Layout",
+      "topics": [
+        "Grid layout basics",
+        "Defining grid areas",
+        "Grid placement",
+        "Complex grid layouts"
+      ],
+      "learningObjectives": [
+        "Understand CSS Grid and how it differs from Flexbox",
+        "Create two-dimensional layouts using Grid",
+        "Define and name grid areas",
+        "Place items precisely in a grid layout"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Grid Layout",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids"
+        },
+        {
+          "name": "CSS-Tricks: A Complete Guide to Grid",
+          "url": "https://css-tricks.com/snippets/css/complete-guide-grid/"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "title": "JavaScript Basics - Variables, Data Types",
+      "topics": [
+        "JavaScript introduction",
+        "Variables and constants",
+        "Data types",
+        "Operators"
+      ],
+      "learningObjectives": [
+        "Understand what JavaScript does and its role in web development",
+        "Declare and use variables and constants",
+        "Work with different data types",
+        "Perform operations on variables"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: JavaScript first steps",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps"
+        },
+        {
+          "name": "JavaScript.info: The Modern JavaScript Tutorial",
+          "url": "https://javascript.info/"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "title": "Control Flow - Conditionals & Loops",
+      "topics": [
+        "Conditional statements (if/else)",
+        "Switch statements",
+        "For loops",
+        "While and do-while loops"
+      ],
+      "learningObjectives": [
+        "Control program flow using conditionals",
+        "Make decisions in code based on conditions",
+        "Iterate using different kinds of loops",
+        "Choose appropriate loop types for different scenarios"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Making decisions in your code",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals"
+        },
+        {
+          "name": "MDN Web Docs: Looping code",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "title": "Functions & Scope",
+      "topics": [
+        "Function declarations and expressions",
+        "Parameters and return values",
+        "Arrow functions",
+        "Variable scope"
+      ],
+      "learningObjectives": [
+        "Define and call functions",
+        "Pass data to functions and return results",
+        "Use arrow functions for concise syntax",
+        "Understand variable scope and closures"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Functions",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions"
+        },
+        {
+          "name": "JavaScript.info: Functions",
+          "url": "https://javascript.info/function-basics"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "title": "Arrays & Objects",
+      "topics": [
+        "Array methods and properties",
+        "Object creation and manipulation",
+        "Array iteration methods",
+        "JSON data format"
+      ],
+      "learningObjectives": [
+        "Create and modify arrays and objects",
+        "Use common array methods",
+        "Access and modify object properties",
+        "Work with JSON data"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Arrays",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays"
+        },
+        {
+          "name": "MDN Web Docs: Objects",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "title": "DOM Manipulation",
+      "topics": [
+        "Document Object Model (DOM)",
+        "Selecting DOM elements",
+        "Modifying DOM elements",
+        "Creating and removing elements"
+      ],
+      "learningObjectives": [
+        "Understand the DOM tree structure",
+        "Select elements using various methods",
+        "Modify element content, attributes, and styles",
+        "Create, insert, and remove elements dynamically"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: DOM Introduction",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+        },
+        {
+          "name": "javascript.info: DOM Manipulation",
+          "url": "https://javascript.info/document"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "title": "Events & Event Handling",
+      "topics": [
+        "Event types and the event object",
+        "Event listeners and handlers",
+        "Event propagation",
+        "Event delegation"
+      ],
+      "learningObjectives": [
+        "Handle browser events with JavaScript",
+        "Add and remove event listeners",
+        "Understand event bubbling and capturing",
+        "Implement event delegation"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Introduction to events",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events"
+        },
+        {
+          "name": "javascript.info: Events",
+          "url": "https://javascript.info/events"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "title": "Working with Forms",
+      "topics": [
+        "Form elements and properties",
+        "Form validation",
+        "Form submission",
+        "FormData object"
+      ],
+      "learningObjectives": [
+        "Access and manipulate form elements",
+        "Validate user input",
+        "Handle form submission",
+        "Process form data"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Web forms",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Forms"
+        },
+        {
+          "name": "javascript.info: Forms, controls",
+          "url": "https://javascript.info/forms-controls"
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "title": "Asynchronous JavaScript - Promises",
+      "topics": [
+        "Asynchronous vs. synchronous code",
+        "Promises basics",
+        "Promise chaining",
+        "Error handling with promises"
+      ],
+      "learningObjectives": [
+        "Understand asynchronous JavaScript",
+        "Create and use promises",
+        "Chain promises for sequential operations",
+        "Handle errors in asynchronous code"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Promises",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+        },
+        {
+          "name": "javascript.info: Promises",
+          "url": "https://javascript.info/promise-basics"
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "title": "Fetch API & AJAX",
+      "topics": [
+        "Fetch API basics",
+        "GET and POST requests",
+        "Working with APIs",
+        "Handling responses"
+      ],
+      "learningObjectives": [
+        "Make HTTP requests using Fetch API",
+        "Send data to servers",
+        "Work with external APIs",
+        "Process and display API responses"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Fetch API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+        },
+        {
+          "name": "javascript.info: Network requests",
+          "url": "https://javascript.info/network"
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "title": "ES6+ Features",
+      "topics": [
+        "Destructuring assignment",
+        "Spread and rest operators",
+        "Template literals",
+        "Default parameters and modules"
+      ],
+      "learningObjectives": [
+        "Use modern JavaScript syntax",
+        "Improve code readability and efficiency",
+        "Apply ES6+ features in practical scenarios",
+        "Understand module imports and exports"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: ES6 features",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+        },
+        {
+          "name": "javascript.info: Modern JavaScript",
+          "url": "https://javascript.info/js"
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "title": "Local Storage & Session Storage",
+      "topics": [
+        "Web Storage API",
+        "LocalStorage vs SessionStorage",
+        "Storing and retrieving data",
+        "Storage limitations"
+      ],
+      "learningObjectives": [
+        "Store data on the client-side",
+        "Choose appropriate storage method",
+        "Save and retrieve complex data structures",
+        "Manage data persistence"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Web Storage API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+        },
+        {
+          "name": "javascript.info: LocalStorage, sessionStorage",
+          "url": "https://javascript.info/localstorage"
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "title": "CSS Animations & Transitions",
+      "topics": [
+        "CSS transitions",
+        "CSS animations and keyframes",
+        "Animation timing functions",
+        "Performance considerations"
+      ],
+      "learningObjectives": [
+        "Create smooth transitions between states",
+        "Build keyframe-based animations",
+        "Control animation timing and behavior",
+        "Optimize animations for performance"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: CSS Animations",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations"
+        },
+        {
+          "name": "CSS-Tricks: Transitions",
+          "url": "https://css-tricks.com/almanac/properties/t/transition/"
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "title": "CSS Preprocessors (SASS)",
+      "topics": [
+        "SASS/SCSS fundamentals",
+        "Variables and nesting",
+        "Mixins and functions",
+        "Partials and imports"
+      ],
+      "learningObjectives": [
+        "Set up and use SASS in projects",
+        "Write more maintainable CSS using variables and nesting",
+        "Create reusable code with mixins",
+        "Organize CSS with partials"
+      ],
+      "resources": [
+        {
+          "name": "SASS Documentation",
+          "url": "https://sass-lang.com/documentation/"
+        },
+        {
+          "name": "freeCodeCamp: SASS Tutorial",
+          "url": "https://www.freecodecamp.org/news/the-complete-guide-to-scss-sass-30053c266b23/"
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "title": "CSS Frameworks (Bootstrap Basics)",
+      "topics": [
+        "Bootstrap grid system",
+        "Bootstrap components",
+        "Responsive utilities",
+        "Customizing Bootstrap"
+      ],
+      "learningObjectives": [
+        "Set up Bootstrap in a project",
+        "Create responsive layouts with Bootstrap grid",
+        "Use Bootstrap components to build interfaces quickly",
+        "Customize Bootstrap to match design requirements"
+      ],
+      "resources": [
+        {
+          "name": "Bootstrap Documentation",
+          "url": "https://getbootstrap.com/docs/"
+        },
+        {
+          "name": "W3Schools Bootstrap Tutorial",
+          "url": "https://www.w3schools.com/bootstrap4/"
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "title": "Setting up a Frontend Project",
+      "topics": [
+        "Project structure",
+        "Build tools (npm, webpack basics)",
+        "Development environment",
+        "Version control with Git"
+      ],
+      "learningObjectives": [
+        "Set up a modern frontend project",
+        "Understand basic build processes",
+        "Configure development tools",
+        "Use Git effectively in a project"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Setting up a front-end development environment",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Introducing_complete_toolchain"
+        },
+        {
+          "name": "webpack Documentation",
+          "url": "https://webpack.js.org/concepts/"
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "title": "Building Components",
+      "topics": [
+        "Component-based architecture",
+        "Creating reusable components",
+        "Component communication",
+        "Web components introduction"
+      ],
+      "learningObjectives": [
+        "Understand component-based development",
+        "Create modular and reusable UI components",
+        "Manage component relationships",
+        "Apply component principles in a project"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Web Components",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+        },
+        {
+          "name": "CSS-Tricks: Web Components",
+          "url": "https://css-tricks.com/an-introduction-to-web-components/"
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "title": "State Management",
+      "topics": [
+        "Managing application state",
+        "Simple state pattern",
+        "LocalStorage for persistence",
+        "Introduction to state management concepts"
+      ],
+      "learningObjectives": [
+        "Understand state in frontend applications",
+        "Implement simple state management",
+        "Persist state between sessions",
+        "Manage component states effectively"
+      ],
+      "resources": [
+        {
+          "name": "JavaScript.info: Data storage in the browser",
+          "url": "https://javascript.info/data-storage"
+        },
+        {
+          "name": "CSS-Tricks: Understanding State in JavaScript",
+          "url": "https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/"
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "title": "API Integration",
+      "topics": [
+        "RESTful API integration",
+        "Authentication basics",
+        "Handling API errors",
+        "Data fetching patterns"
+      ],
+      "learningObjectives": [
+        "Connect frontend applications to APIs",
+        "Implement basic authentication",
+        "Handle errors and loading states",
+        "Display API data in the UI"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Fetching data from the server",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data"
+        },
+        {
+          "name": "JavaScript.info: Authentication",
+          "url": "https://javascript.info/fetch-api#fetch-credentials"
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "title": "Performance Optimization",
+      "topics": [
+        "Web performance basics",
+        "Resource loading optimization",
+        "Lazy loading",
+        "Performance measurement tools"
+      ],
+      "learningObjectives": [
+        "Identify performance bottlenecks",
+        "Optimize image and resource loading",
+        "Implement lazy loading techniques",
+        "Use browser tools to measure performance"
+      ],
+      "resources": [
+        {
+          "name": "web.dev: Web performance",
+          "url": "https://web.dev/learn-web-vitals/"
+        },
+        {
+          "name": "MDN Web Docs: Performance",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Performance"
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "title": "Debugging & Testing",
+      "topics": [
+        "Browser developer tools",
+        "Common debugging techniques",
+        "Basic testing concepts",
+        "Writing simple tests"
+      ],
+      "learningObjectives": [
+        "Use browser tools for debugging",
+        "Apply systematic debugging approaches",
+        "Understand the importance of testing",
+        "Write simple tests for your code"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Debugging",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/JavaScript"
+        },
+        {
+          "name": "Google Developers: Chrome DevTools",
+          "url": "https://developers.google.com/web/tools/chrome-devtools/"
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "title": "Deployment",
+      "topics": [
+        "Preparing code for production",
+        "Static site deployment",
+        "Hosting options",
+        "Domain setup basics"
+      ],
+      "learningObjectives": [
+        "Prepare frontend applications for deployment",
+        "Deploy a static website",
+        "Choose appropriate hosting solutions",
+        "Configure custom domains"
+      ],
+      "resources": [
+        {
+          "name": "MDN Web Docs: Publishing your website",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Publishing_your_website"
+        },
+        {
+          "name": "freeCodeCamp: Deployment Guide",
+          "url": "https://www.freecodecamp.org/news/a-simple-guide-to-deploying-your-static-site-to-netlify/"
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "title": "Portfolio Project",
+      "topics": [
+        "Planning a portfolio website",
+        "Design and user experience",
+        "Implementing learned concepts",
+        "Showcasing projects"
+      ],
+      "learningObjectives": [
+        "Plan and design a professional portfolio",
+        "Apply technologies learned throughout the course",
+        "Implement responsive design principles",
+        "Create an effective showcase for your work"
+      ],
+      "resources": [
+        {
+          "name": "freeCodeCamp: How to Build a Portfolio",
+          "url": "https://www.freecodecamp.org/news/how-to-build-a-developer-portfolio-website/"
+        },
+        {
+          "name": "Smashing Magazine: Portfolio Design",
+          "url": "https://www.smashingmagazine.com/2020/05/impressive-web-development-portfolio/"
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "title": "Frontend Career Path & Next Steps",
+      "topics": [
+        "Frontend career options",
+        "Learning roadmap continuation",
+        "Building a learning habit",
+        "Frontend frameworks (React, Vue, Angular) introduction"
+      ],
+      "learningObjectives": [
+        "Identify potential career paths in frontend development",
+        "Plan your continued learning journey",
+        "Establish sustainable learning habits",
+        "Get an overview of popular frontend frameworks"
+      ],
+      "resources": [
+        {
+          "name": "roadmap.sh: Frontend Roadmap",
+          "url": "https://roadmap.sh/frontend"
+        },
+        {
+          "name": "MDN Web Docs: Front-end web developer guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer"
+        }
+      ]
+    }
+  ]
+}
