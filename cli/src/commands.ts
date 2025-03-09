@@ -3,10 +3,14 @@ import { promisify } from 'util';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as readline from 'readline';
+import chalk from 'chalk';
+import ora from 'ora';
 
 const execAsync = promisify(exec);
 const VERSION = '0.0.1';
-const REPO_URL = 'https://github.com/TechOS/30days.git';
+const REPO_URL = 'https://github.com/Himasnhu-AT/30day';
+const REPO_CONTENT_URL = 'https://raw.githubusercontent.com/Himasnhu-AT/30day/refs/heads/main/';
+const VERSION_CONFIG = 'https://raw.githubusercontent.com/Himasnhu-AT/30day/refs/heads/main/version'
 
 interface FileConfig {
   templatePath: string;
@@ -37,14 +41,14 @@ const question = (query: string): Promise<string> => {
     output: process.stdout,
   });
 
-  return new Promise(resolve => rl.question(query, ans => {
+  return new Promise(resolve => rl.question(chalk.cyan(query), ans => {
     rl.close();
     resolve(ans);
   }));
 };
 
 const displayBanner = () => {
-  console.log(`
+  console.log(chalk.blue(`
 ████████╗███████╗ ██████╗██╗  ██╗ ██████╗ ███████╗
 ╚══██╔══╝██╔════╝██╔════╝██║  ██║██╔═══██╗██╔════╝
    ██║   █████╗  ██║     ███████║██║   ██║███████╗
@@ -52,31 +56,37 @@ const displayBanner = () => {
    ██║   ███████╗╚██████╗██║  ██║╚██████╔╝███████║
    ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
                                                    
-Version: ${VERSION}
-`);
+${chalk.yellow('Version:')} ${chalk.green(VERSION)}
+`));
 };
 
 const checkForUpdates = async () => {
+  const spinner = ora('Checking for updates...').start();
   try {
-    console.log('Checking for updates...');
-    const latestVersion = '0.0.2'; // This would come from an API call
+    const response = await fetch(VERSION_CONFIG);
+    if (!response.ok) {
+      spinner.fail('Failed to fetch latest version');
+      throw new Error('Failed to fetch latest version');
+    }
+
+    const latestVersion = await response.text();
     if (latestVersion > VERSION) {
-      console.log('New version available:', latestVersion);
-      console.log('Run "npm update -g 30days" to update');
+      spinner.info(chalk.yellow(`New version available: ${chalk.green(latestVersion)}`));
+      console.log(chalk.cyan('Run "npm update -g 30days" to update'));
     } else {
-      console.log('You are using the latest version');
+      spinner.succeed(chalk.green('You are using the latest version'));
     }
   } catch (error) {
-    console.error('Failed to check for updates:', error);
+    spinner.fail(chalk.red('Failed to check for updates: ' + error));
   }
 };
 
 const selectProject = async (): Promise<string> => {
-  console.log('\nAvailable projects:');
-  console.log('1. Frontend Learning Path (30 days)');
-  console.log('2. JavaScript Mastery (30 days)');
-  console.log('3. Python Development (30 days)');
-  console.log('4. React Development (30 days)\n');
+  console.log(chalk.yellow('\nAvailable projects:'));
+  console.log(chalk.cyan('1.') + ' Frontend Learning Path (30 days)');
+  console.log(chalk.cyan('2.') + ' JavaScript Mastery (30 days)');
+  console.log(chalk.cyan('3.') + ' Python Development (30 days)');
+  console.log(chalk.cyan('4.') + ' React Development (30 days)\n');
 
   const answer = await question('Select a project (1-4): ');
   const projects: { [key: string]: string } = {
@@ -87,7 +97,7 @@ const selectProject = async (): Promise<string> => {
   };
 
   if (!projects[answer]) {
-    console.error('Invalid selection. Please try again.');
+    console.error(chalk.red('Invalid selection. Please try again.'));
     return selectProject();
   }
 
@@ -116,13 +126,13 @@ export const setupRepo = async () => {
     displayBanner();
     await checkForUpdates();
 
-    console.log('\nWelcome to TechOS Learning Platform!');
-    console.log('Let\'s get you set up with your learning journey.\n');
+    console.log(chalk.cyan('\nWelcome to TechOS Learning Platform!'));
+    console.log(chalk.yellow('Let\'s get you set up with your learning journey.\n'));
 
     const projectType = await selectProject();
     const workspacePath = await selectWorkspacePath();
     
-    console.log('\nSetting up your development environment...');
+    const setupSpinner = ora('Setting up your development environment...').start();
     
     // Create necessary directories
     const templateFolder = path.join(workspacePath, 'templates');
@@ -131,10 +141,13 @@ export const setupRepo = async () => {
     fs.mkdirSync(userWorkspaceFolder, { recursive: true });
 
     // Clone the repo temporarily
+    const cloneSpinner = ora('Cloning repository...').start();
     const tempRepoPath = path.join(workspacePath, 'temp-repo');
     await execAsync(`git clone ${REPO_URL} ${tempRepoPath}`);
+    cloneSpinner.succeed('Repository cloned successfully');
 
-    // Copy template files to templates folder
+    // Copy template files
+    const copySpinner = ora('Copying template files...').start();
     const days = fs.readdirSync(path.join(tempRepoPath, projectType));
     days.forEach(day => {
       if (day.startsWith('day')) {
@@ -143,8 +156,10 @@ export const setupRepo = async () => {
         fs.cpSync(srcPath, destPath, { recursive: true });
       }
     });
+    copySpinner.succeed('Template files copied successfully');
 
     // Initialize configuration
+    const configSpinner = ora('Initializing configuration...').start();
     const config: Config = {
       ...DEFAULT_CONFIG,
       projectType,
@@ -156,6 +171,7 @@ export const setupRepo = async () => {
     
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
     fs.writeFileSync(dayStorePath, '1');
+    configSpinner.succeed('Configuration initialized');
 
     // Prepare day 1
     const day1Path = path.join(templateFolder, 'day1');
@@ -164,15 +180,23 @@ export const setupRepo = async () => {
     }
 
     // Cleanup
+    const cleanupSpinner = ora('Cleaning up...').start();
     fs.rmSync(tempRepoPath, { recursive: true, force: true });
+    cleanupSpinner.succeed('Cleanup complete');
 
-    console.log('\n✨ Setup complete! You\'re ready to start learning.');
-    console.log(`\nYour workspace is located at: ${workspacePath}`);
-    console.log('Get started with Day 1 by checking the assignment.md file in your workspace.');
-    console.log('\nHappy coding! 🚀');
+    setupSpinner.succeed(chalk.green('Setup complete! ✨'));
+    
+    console.log(chalk.cyan('\nYour workspace is located at: ') + chalk.yellow(workspacePath));
+    console.log(chalk.green('\nGet started with Day 1 by checking the assignment.md file in your workspace.'));
+    console.log(chalk.blue('\nHappy coding! 🚀'));
 
   } catch (error) {
-    console.error('Error setting up the repository:', error);
+    if (error instanceof Error) {
+      console.error(chalk.red('Error setting up the repository:'), error.message);
+    } else {
+      console.error(chalk.red('An unknown error occurred while sumbitting assignment.'));
+      console.error(error);
+    }
   }
 };
 
@@ -197,20 +221,21 @@ export const submitAssignment = async (workspacePath: string) => {
       throw new Error(`No configuration found for day ${currentDay}`);
     }
 
-    console.log('Running tests for your assignment...');
+    const testSpinner = ora('Running tests for your assignment...').start();
+
     const { stdout, stderr } = await execAsync(`ts-node ${currentDayConfig.testPath}`, {
       cwd: currentDayConfig.workspacePath
     });
 
     if (stderr) {
-      console.error('Test errors:', stderr);
+      testSpinner.fail(chalk.red('Test errors:'));
+      console.error(chalk.red(stderr));
       return;
     }
 
-    console.log('Test results:', stdout);
-
-    // Mark as completed and update day if tests pass
     if (!stdout.includes('FAILED')) {
+      testSpinner.succeed(chalk.green('All tests passed! 🎉'));
+
       config.days[currentDay] = {
         ...currentDayConfig,
         completed: true
@@ -220,17 +245,26 @@ export const submitAssignment = async (workspacePath: string) => {
       const nextDay = String(Number(currentDay) + 1);
       if (config.days[nextDay]) {
         updateDayStore(workspacePath, nextDay);
-        console.log(`\nCongratulations! Moving on to day ${nextDay}`);
+        console.log(chalk.green(`\nCongratulations! 🎊 Moving on to day ${chalk.yellow(nextDay)}`));
       } else {
-        console.log('\nCongratulations! You have completed all available days!');
+        console.log(chalk.green('\nCongratulations! 🎉 You have completed all available days!'));
       }
       
       // Save updated config
       const configPath = path.join(workspacePath, 'config.json');
       fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+    } else {
+      testSpinner.fail(chalk.red('Some tests failed'));
+      console.log(chalk.yellow('\nTest results:'));
+      console.log(stdout);
     }
 
   } catch (error) {
-    console.error('Error submitting the assignment:', error);
+    if (error instanceof Error) {
+      console.error(chalk.red('Error submitting the assignment:'), error.message);
+    } else {
+      console.error(chalk.red('An unknown error occurred while sumbitting assignment.'));
+      console.error(error);
+    }
   }
 };
